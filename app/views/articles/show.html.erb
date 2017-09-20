@@ -7,13 +7,20 @@
             <div class = "row">
                 <div class = "col-lg-12">
                     
-                    <h1><%= @article.title %></h1>
-                    <p><%= @article.body %></p>
-                    <%= link_to "<< Back to Article list", articles_path %>
+                    <h1 align = "center"><%= @article.title %></h1>
+                    <div class = "well">
+                        <p><%= @article.body %></p>
+                    </div>
+                    
                     <p>
-                      <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+                        <div class = "text-center">
+                            <button type = "button" class = "btn btn-default">
+                             <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+                            </button>
+                        </div>
                       <!--notice in the above we use method: delete as links in HTML are alwasy GET requests but we want to delete something--> 
                     </p>
+                    <%= link_to "<< Back to Article list", articles_path %>
                 </div>
             </div>
         </div>
