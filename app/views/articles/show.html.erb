@@ -9,8 +9,11 @@
                     
                     <h1><%= @article.title %></h1>
                     <p><%= @article.body %></p>
-                    <%= link_to "<< Back to Article list", article_path %>
-                    
+                    <%= link_to "<< Back to Article list", articles_path %>
+                    <p>
+                      <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+                      <!--notice in the above we use method: delete as links in HTML are alwasy GET requests but we want to delete something--> 
+                    </p>
                 </div>
             </div>
         </div>
