@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
     
     def show
         @article = Article.find(params[:id])
+        @comment = Comment.new
+        @comment.article_id = @article.id
     end
     #the above is able to deal with a user clicking on a specific blog title
     
@@ -25,7 +27,7 @@ class ArticlesController < ApplicationController
     end
     #so the above solves the unknonw action error but now we get an error saying there is no template
     #we added a template new.html.erb and put an h1 in it to solve the error 
-    #note the name of the tamplate matches the name of the above controller method
+    #note the name of the template matches the name of the above controller method
     #notice that we had to create an article in this action to deal with the fact that we have form_for(@article) in new.html.erb
     
     def create 
