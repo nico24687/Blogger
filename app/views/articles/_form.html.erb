@@ -23,6 +23,10 @@
             <!-- the above creates a multi line text box called body--> 
         </p>
         <p>
+            <%= f.label :tag_list %></br>
+            <%= f.text_field :tag_list %>
+        </p>
+        <p>
             <%= f.submit %>
             <!-- f.submit create a button labeled create --> 
             <!-- notice if you try and submit an article you get an error as there is no create action yet defined --> 
