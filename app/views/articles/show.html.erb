@@ -20,6 +20,9 @@
                         </div>
                       <!--notice in the above we use method: delete as links in HTML are alwasy GET requests but we want to delete something--> 
                     </p>
+                    <p>
+                     <%= link_to "edit", edit_article_path(@article) %>
+                    </p>
                     <%= link_to "<< Back to Article list", articles_path %>
                 </div>
             </div>

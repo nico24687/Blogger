@@ -1,32 +1,3 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-    <body>
-        <%= form_for(@article) do |f| %>
-        <!-- form_for is a rails helper method. In this case it creates a form for the object names @article and takes a block. It refers to the form as f-->
-        <ul>
-            <% @article.errors.full_messages.each do |error| %>
-            <li><%= error %></li>
-            <% end %>
-        </ul>
-        <p>
-            <%= f.label :title %><br/>
-            <!-- f.label is a rails helper to create an HTML label for a field-->
-            <%= f.text_field :title %>
-            <!-- the code above creates a single line text box named title -->
-        </p>
-        <p>
-            <%= f.label :body %><br/>
-            <%= f.text_area :body %>
-            <!-- the above creates a multi line text box called body--> 
-        </p>
-        <p>
-            <%= f.submit %>
-            <!-- f.submit create a button labeled create --> 
-            <!-- notice if you try and submit an article you get an error as there is no create action yet defined --> 
-        </p>
-        <% end %>
-    </body>
-</html>
 
+        <h1>Create a new article</h1>
+        <%= render partial: 'form' %>
