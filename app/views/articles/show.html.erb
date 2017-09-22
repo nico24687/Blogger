@@ -13,20 +13,25 @@
                     </div>
                     
                     <p>
+                        <button type = "button" class = "btn btn-default">
+                             <%= link_to "<< Back to Article list", articles_path %>
+                        </button>
                         <div class = "text-center">
                             <button type = "button" class = "btn btn-default">
                              <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
                             </button>
+                            <button type = "button" class = "btn btn-default">
+                             <%= link_to "edit", edit_article_path(@article) %>
+                            </button>
+                            
                         </div>
                       <!--notice in the above we use method: delete as links in HTML are alwasy GET requests but we want to delete something--> 
-                    </p>
-                    <p>
-                     <%= link_to "edit", edit_article_path(@article) %>
-                    </p>
-                    <h3>Comments(<%= @article.comments.size %>)</h3>
-                    <%= render partial: 'articles/comment', collection: @article.comments %>  
-                    <%= render partial: 'comments/form' %>
-                    <%= link_to "<< Back to Article list", articles_path %>
+            
+                   
+                       <h4>Comments(<%=@article.comments.size %>)</h4>
+                        <%= render partial: 'articles/comment', collection: @article.comments %>  
+                        <%= render partial: 'comments/form' %>
+                    
                 </div>
             </div>
         </div>

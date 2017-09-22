@@ -1,5 +1,15 @@
-<div>
-    <h4>Comment by <%= comment.author_name %></h4>
-    <p class = "comment"><%= comment.body %></p>
-    <p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</p>
-</div>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class = "panel panel-default">
+            <div class = "panel-body">
+                <em><h6>Comment by <%= comment.author_name %></h6></em>
+                <p class = "comment"><%= comment.body %></p>
+                <p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</p>
+            </div>
+        </div>
+    </body>
+</html>
+
